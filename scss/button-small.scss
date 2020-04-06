@@ -30,4 +30,8 @@
     color: #fff;
     border-color: transparent;
   }
+
+  &:active {
+    background-color: darken($color: $color-shadow, $amount: 10%);
+  }
 }

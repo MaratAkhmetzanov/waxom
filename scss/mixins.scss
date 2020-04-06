@@ -41,9 +41,11 @@
   &:hover {
     background-color: $color-shadow;
     cursor: pointer;
+    box-shadow: none;
   }
   &:active {
     background-color: darken($color: $color-shadow, $amount: 10%);
+    box-shadow: none;
   }
 }
 

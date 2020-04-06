@@ -1,6 +1,5 @@
 @import "variables.scss";
 @import "mixins.scss";
-@import "header.scss";
 @import "button-small.scss";
 
 * {
@@ -23,6 +22,119 @@ body {
 
 .btn {
   @include button;
+}
+
+.header {
+  color: #fff;
+  padding: 38px 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: $wrp-size;
+  box-sizing: border-box;
+  margin: 0 auto;
+
+  &-logo {
+    text-decoration: none;
+    fill: #fff;
+    color: #fff;
+
+    &:hover {
+      fill: $color-text-selected;
+      color: $color-text-selected;
+    }
+
+    &-img {
+      display: block;
+      float: left;
+      box-sizing: border-box;
+    }
+
+    &-name {
+      font-size: 34px;
+      line-height: 60px;
+      letter-spacing: -1px;
+    }
+  }
+
+  &-nav {
+    min-height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+
+    &-item {
+      text-transform: capitalize;
+      color: #fff;
+      text-decoration: none;
+      margin-left: 28px;
+      font-family: $font-montserrat;
+      font-weight: 300;
+      font-size: 14px;
+
+      &:hover {
+        color: $color-text-selected;
+      }
+
+      &.active {
+        color: $color-text-selected;
+      }
+
+      &-cart {
+        display: block;
+        width: 20px;
+        height: 28px;
+        margin-left: 62px;
+        fill: #fff;
+        background-color: transparent;
+        border: 0;
+        outline: none;
+
+        &:hover {
+          fill: $color-text-selected;
+          cursor: pointer;
+        }
+      }
+
+      &-search {
+        display: block;
+        width: 27px;
+        height: 28px;
+        position: relative;
+        margin-left: 28px;
+
+        &-lable {
+          fill: #fff;
+          display: block;
+
+          &:hover {
+            fill: $color-text-selected;
+            cursor: pointer;
+          }
+        }
+
+        &-input {
+          position: absolute;
+          right: -28px;
+          top: 38px;
+          height: 36px;
+          width: 0px;
+          border: 0;
+
+          &:focus {
+            width: 260px;
+            padding: 8px;
+          }
+
+          &:active {
+            width: 260px;
+            padding: 8px;
+          }
+        }
+      }
+    }
+  }
 }
 
 .slider {
@@ -77,38 +189,41 @@ body {
   .btn {
     margin: 0 auto;
   }
-}
 
-.slider-btns {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 40px;
+  &-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
 
-  &-title {
-    position: relative;
-    margin: 0 5px;
-    cursor: pointer;
-  }
-  &-item {
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    background-color: #fff;
-    opacity: 0.5;
-    box-sizing: border-box;
-    margin: 0 5px;
-    &:hover {
-      opacity: 0.8;
+    &-title {
+      position: relative;
+      margin: 0 5px;
+      cursor: pointer;
     }
-
-    &.checked {
-      opacity: 1;
-      border: 2px solid #d3c1ad;
-      background-color: transparent;
+    &-item {
+      display: block;
       width: 15px;
       height: 15px;
+      transform: scale(0.75);
+      border-radius: 10px;
+      background-color: #fff;
+      opacity: 0.5;
+      box-sizing: border-box;
+      margin: 0 3px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &.checked {
+        opacity: 1;
+        border: 2px solid #d3c1ad;
+        background-color: transparent;
+        width: 15px;
+        height: 15px;
+        transform: scale(1);
+      }
     }
   }
 }
@@ -147,15 +262,17 @@ body {
 //   }
 // }
 
+// SERVICES
+
 .services {
   padding: 80px;
   display: flex;
   justify-content: center;
 
   &-item {
-    width: 272px;
+    width: 276px;
     text-align: center;
-    margin: 0 14px;
+    margin: 0 12px;
 
     &:hover {
       cursor: pointer;
@@ -163,11 +280,11 @@ body {
         color: $color-text-selected;
       }
 
-      & .services-item-img path {
+      & .services-item-img {
         fill: $color-text-selected;
       }
 
-      & .services-item-line {
+      &:after {
         border-color: $color-text-selected;
       }
     }
@@ -178,6 +295,7 @@ body {
       align-items: flex-end;
       height: 48px;
       margin-bottom: 25px;
+      fill: $color-header;
     }
 
     &-title {
@@ -193,7 +311,9 @@ body {
       margin-bottom: 26px;
     }
 
-    &-line {
+    &:after {
+      content: "";
+      display: block;
       width: 70px;
       border: 0;
       border-bottom: 3px solid #f1eee9;
