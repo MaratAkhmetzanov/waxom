@@ -1,0 +1,80 @@
+@import "variables.scss";
+
+@mixin slider-btn {
+  display: block;
+  width: 42px;
+  height: 75px;
+  position: absolute;
+  top: 100px;
+  opacity: 0.5;
+  background-color: transparent;
+  border: 0;
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin button {
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 14px;
+  background-color: $color-btn;
+  box-shadow: inset 0px -3px 0 0 $color-shadow;
+  display: block;
+  width: 170px;
+  height: 50px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: flex;
+  border: none;
+
+  & span {
+    margin: auto;
+  }
+  &:hover {
+    background-color: $color-shadow;
+    cursor: pointer;
+  }
+  &:active {
+    background-color: darken($color: $color-shadow, $amount: 10%);
+  }
+}
+
+@mixin text-p($f-size: 16px, $l-height: 1.75, $color: $color-text) {
+  font-size: $f-size;
+  color: $color;
+  font-family: $font-montserrat;
+  line-height: $l-height;
+  font-weight: 400;
+}
+
+@mixin text-h2(
+  $f-size: 30px,
+  $align: center,
+  $f-weight: 600,
+  $color: $color-header
+) {
+  font-size: $f-size;
+  font-weight: $f-weight;
+  text-align: $align;
+  color: $color;
+}
+
+@mixin text-h3(
+  $f-size: 20px,
+  $align: left,
+  $f-weight: 500,
+  $color: $color-text-selected
+) {
+  font-size: $f-size;
+  font-weight: $f-weight;
+  text-align: $align;
+  color: $color;
+}

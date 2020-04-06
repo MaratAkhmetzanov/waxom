@@ -1,0 +1,372 @@
+@import "variables.scss";
+@import "mixins.scss";
+@import "header.scss";
+@import "button-small.scss";
+
+* {
+  font-family: Raleway;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 1170px;
+  margin: 0 auto;
+}
+
+.clr:after {
+  content: "";
+  width: 100%;
+  display: block;
+  clear: both;
+}
+
+.btn {
+  @include button;
+}
+
+.slider {
+  background: url(../img/bg_slider.jpg) 50% 0% no-repeat;
+  background-color: #404040;
+  background-size: cover;
+  max-height: 1024px;
+  min-height: 600px;
+  height: 100vh;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &-left-btn {
+    background-image: url(../icons/left.svg);
+    left: 150px;
+    @include slider-btn;
+  }
+
+  &-right-btn {
+    background-image: url(../icons/right.svg);
+    right: 150px;
+    @include slider-btn;
+  }
+
+  &-wrp {
+    color: #fff;
+    text-align: center;
+    position: relative;
+  }
+
+  &-pretitle {
+    font-size: 36px;
+    font-weight: 500;
+  }
+
+  &-title {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 52px;
+    font-weight: 800;
+  }
+
+  &-description {
+    @include text-p($l-height: 1.5, $color: #fff);
+    margin: 0 auto 44px;
+    width: 590px;
+  }
+
+  .btn {
+    margin: 0 auto;
+  }
+}
+
+.slider-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+
+  &-title {
+    position: relative;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  &-item {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    opacity: 0.5;
+    box-sizing: border-box;
+    margin: 0 5px;
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &.checked {
+      opacity: 1;
+      border: 2px solid #d3c1ad;
+      background-color: transparent;
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+// .slider-radio {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-bottom: 40px;
+
+//   &-title {
+//     position: relative;
+//     margin: 0 5px;
+//     cursor: pointer;
+//   }
+//   &-btn {
+//     display: none;
+//     &:checked + .slider-radio-mark {
+//       border: 2px solid #d3c1ad;
+//       background-color: transparent;
+//       width: 15px;
+//       height: 15px;
+//     }
+//   }
+//   &-mark {
+//     display: block;
+//     width: 11px;
+//     height: 11px;
+//     border-radius: 11px;
+//     background-color: #fff;
+//     opacity: 0.5;
+//     box-sizing: border-box;
+//     &:hover {
+//       opacity: 0.8;
+//     }
+//   }
+// }
+
+.services {
+  padding: 80px;
+  display: flex;
+  justify-content: center;
+
+  &-item {
+    width: 272px;
+    text-align: center;
+    margin: 0 14px;
+
+    &:hover {
+      cursor: pointer;
+      & .services-item-title {
+        color: $color-text-selected;
+      }
+
+      & .services-item-img path {
+        fill: $color-text-selected;
+      }
+
+      & .services-item-line {
+        border-color: $color-text-selected;
+      }
+    }
+
+    &-img {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 48px;
+      margin-bottom: 25px;
+    }
+
+    &-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: $color-header;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    &-p {
+      @include text-p(14px);
+      margin-bottom: 26px;
+    }
+
+    &-line {
+      width: 70px;
+      border: 0;
+      border-bottom: 3px solid #f1eee9;
+      margin: 0 auto;
+    }
+  }
+}
+
+.phrase {
+  background-color: $color-bg;
+  padding-top: 80px;
+
+  &-title {
+    @include text-h2;
+    margin-bottom: 16px;
+  }
+
+  &-p {
+    @include text-p;
+    margin: 0 auto 34px;
+    width: 780px;
+    text-align: center;
+  }
+
+  &-img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.purchase {
+  background-image: linear-gradient(to right, #211b19, #4e3427);
+
+  &-wrp {
+    max-width: ($wrp-size)-60px;
+    padding: 44px 30px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-title {
+    @include text-h2(28px, left, 400, #fff);
+
+    &-color {
+      color: $color-text-selected;
+    }
+  }
+
+  &-p {
+    @include text-p($f-size: 18px, $color: #615855);
+  }
+
+  &-btn {
+    @include button;
+    margin-right: 20px;
+  }
+}
+
+.projects {
+  padding: 80px 0;
+
+  &-btns {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 40px;
+  }
+
+  & .btn-small {
+    margin: 0 5px;
+  }
+
+  &-wrp {
+    max-width: $wrp-size;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &-item {
+    margin: 0 15px 30px;
+    width: 370px;
+    background-color: $color-bg;
+    position: relative;
+    height: 337px;
+
+    &:last-child {
+      margin-bottom: 40px;
+    }
+
+    &-onhover {
+      position: absolute;
+      background-color: rgba(1, 1, 1, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 370px;
+      height: 237px;
+      visibility: hidden;
+
+      &-icon {
+        margin: 14px;
+
+        &:hover path {
+          fill: $color-text-selected;
+        }
+      }
+    }
+
+    &:hover {
+      background-color: $color-bg-dark;
+
+      & .projects-item-onhover {
+        visibility: visible;
+      }
+
+      & .projects-item-title {
+        color: #fff;
+      }
+
+      & .projects-item-p {
+        color: $color-text-selected;
+      }
+
+      & .projects-item-text:before {
+        border-bottom-color: $color-bg-dark;
+      }
+    }
+
+    &-img {
+      display: block;
+    }
+
+    &-text {
+      padding: 27px 28px;
+      height: 100px;
+      box-sizing: border-box;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 19px;
+        top: -25px;
+        display: block;
+        width: 0;
+        height: 0;
+        border: 15px solid transparent;
+        border-bottom: 10px solid $color-bg;
+      }
+    }
+
+    &-title {
+      @include text-h3;
+      margin-bottom: 3px;
+      text-transform: capitalize;
+    }
+
+    &-p {
+      @include text-p($f-size: 14px, $color: #d1d1d1);
+    }
+  }
+
+  & .btn {
+    margin: 0 auto;
+  }
+}
+
+.slider,
+.services,
+.phrase,
+.purchase {
+  // display: none;
+}
