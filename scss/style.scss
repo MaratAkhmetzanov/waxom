@@ -20,15 +20,14 @@ body {
   clear: both;
 }
 
-.btn {
-  @include button;
-}
-
 .header {
   color: #fff;
   padding: 38px 30px 0;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: end;
   align-items: flex-end;
   width: $wrp-size;
   box-sizing: border-box;
@@ -59,8 +58,11 @@ body {
 
   &-nav {
     min-height: 60px;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
     align-items: center;
     list-style: none;
 
@@ -70,7 +72,7 @@ body {
       text-decoration: none;
       margin-left: 28px;
       font-family: $font-montserrat;
-      font-weight: 300;
+      font-weight: $font-weight-light;
       font-size: 14px;
 
       &:hover {
@@ -137,7 +139,7 @@ body {
   }
 }
 
-.slider {
+.slides {
   background: url(../img/bg_slider.jpg) 50% 0% no-repeat;
   background-color: #404040;
   background-size: cover;
@@ -145,21 +147,24 @@ body {
   min-height: 600px;
   height: 100vh;
   box-sizing: border-box;
-
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   flex-direction: column;
+  -webkit-box-pack: justify;
   justify-content: space-between;
 
-  &-left-btn {
-    background-image: url(../icons/left.svg);
-    left: 150px;
-    @include slider-btn;
-  }
+  &-switcher {
+    @include slides-btn;
 
-  &-right-btn {
-    background-image: url(../icons/right.svg);
-    right: 150px;
-    @include slider-btn;
+    &.left {
+      left: 150px;
+    }
+
+    &.right {
+      right: 150px;
+    }
   }
 
   &-wrp {
@@ -186,13 +191,17 @@ body {
     width: 590px;
   }
 
-  .btn {
+  &-btn {
+    @include button;
     margin: 0 auto;
   }
 
-  &-btns {
+  &-pagination {
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
     align-items: center;
     margin-bottom: 40px;
 
@@ -203,14 +212,13 @@ body {
     }
     &-item {
       display: block;
-      width: 15px;
-      height: 15px;
-      transform: scale(0.75);
-      border-radius: 10px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
       background-color: #fff;
       opacity: 0.5;
-      box-sizing: border-box;
-      margin: 0 3px;
+      box-sizing: padding-box;
+      margin: 0 5px;
 
       &:hover {
         opacity: 0.8;
@@ -220,53 +228,21 @@ body {
         opacity: 1;
         border: 2px solid #d3c1ad;
         background-color: transparent;
-        width: 15px;
-        height: 15px;
-        transform: scale(1);
+        width: 11px;
+        height: 11px;
+        margin: 0 3px;
       }
     }
   }
 }
 
-// .slider-radio {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   margin-bottom: 40px;
-
-//   &-title {
-//     position: relative;
-//     margin: 0 5px;
-//     cursor: pointer;
-//   }
-//   &-btn {
-//     display: none;
-//     &:checked + .slider-radio-mark {
-//       border: 2px solid #d3c1ad;
-//       background-color: transparent;
-//       width: 15px;
-//       height: 15px;
-//     }
-//   }
-//   &-mark {
-//     display: block;
-//     width: 11px;
-//     height: 11px;
-//     border-radius: 11px;
-//     background-color: #fff;
-//     opacity: 0.5;
-//     box-sizing: border-box;
-//     &:hover {
-//       opacity: 0.8;
-//     }
-//   }
-// }
-
 // SERVICES
 
 .services {
   padding: 80px;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-pack: center;
   justify-content: center;
 
   &-item {
@@ -290,8 +266,11 @@ body {
     }
 
     &-img {
+      display: -webkit-box;
       display: flex;
+      -webkit-box-pack: center;
       justify-content: center;
+      -webkit-box-align: end;
       align-items: flex-end;
       height: 48px;
       margin-bottom: 25px;
@@ -345,14 +324,24 @@ body {
 }
 
 .purchase {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#211b19),
+    to(#4e3427)
+  );
   background-image: linear-gradient(to right, #211b19, #4e3427);
 
   &-wrp {
     max-width: ($wrp-size)-60px;
     padding: 44px 30px;
     margin: 0 auto;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
     align-items: center;
   }
 
@@ -377,8 +366,18 @@ body {
 .projects {
   padding: 80px 0;
 
+  &-title {
+    @extend .phrase-title;
+  }
+
+  &-p {
+    @extend .phrase-p;
+  }
+
   &-btns {
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: center;
     justify-content: center;
     margin: 0 auto 40px;
   }
@@ -390,7 +389,9 @@ body {
   &-wrp {
     max-width: $wrp-size;
     margin: 0 auto;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: center;
     justify-content: center;
     flex-wrap: wrap;
   }
@@ -409,17 +410,20 @@ body {
     &-onhover {
       position: absolute;
       background-color: rgba(1, 1, 1, 0.7);
-      display: flex;
+      display: -webkit-box;
+      -webkit-box-pack: center;
       justify-content: center;
+      -webkit-box-align: center;
       align-items: center;
       width: 370px;
       height: 237px;
-      visibility: hidden;
+      display: none;
 
       &-icon {
         margin: 14px;
+        fill: #fff;
 
-        &:hover path {
+        &:hover {
           fill: $color-text-selected;
         }
       }
@@ -429,7 +433,8 @@ body {
       background-color: $color-bg-dark;
 
       & .projects-item-onhover {
-        visibility: visible;
+        display: -webkit-box;
+        display: flex;
       }
 
       & .projects-item-title {
@@ -479,14 +484,8 @@ body {
     }
   }
 
-  & .btn {
+  &-btn {
+    @include button;
     margin: 0 auto;
   }
-}
-
-.slider,
-.services,
-.phrase,
-.purchase {
-  // display: none;
 }

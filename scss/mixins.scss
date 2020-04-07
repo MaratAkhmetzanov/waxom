@@ -1,6 +1,6 @@
 @import "variables.scss";
 
-@mixin slider-btn {
+@mixin slides-btn {
   display: block;
   width: 42px;
   height: 75px;
@@ -9,6 +9,8 @@
   opacity: 0.5;
   background-color: transparent;
   border: 0;
+  fill: #fff;
+
   &:hover {
     cursor: pointer;
     opacity: 1;
@@ -32,12 +34,14 @@
   height: 50px;
   border-radius: 3px;
   box-sizing: border-box;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
   border: none;
 
-  & span {
-    margin: auto;
-  }
   &:hover {
     background-color: $color-shadow;
     cursor: pointer;
@@ -54,7 +58,7 @@
   color: $color;
   font-family: $font-montserrat;
   line-height: $l-height;
-  font-weight: 400;
+  font-weight: $font-weight-light;
 }
 
 @mixin text-h2(
