@@ -34,11 +34,8 @@
   height: 50px;
   border-radius: 3px;
   box-sizing: border-box;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
   align-items: center;
   border: none;
 
@@ -53,12 +50,20 @@
   }
 }
 
-@mixin text-p($f-size: 16px, $l-height: 1.75, $color: $color-text) {
+@mixin text-p(
+  $f-size: 16px,
+  $l-height: 1.75,
+  $color: $color-text,
+  $f-weight: $font-weight-main,
+  $t-align: left
+) {
   font-size: $f-size;
   color: $color;
   font-family: $font-montserrat;
   line-height: $l-height;
-  font-weight: $font-weight-light;
+  font-weight: $f-weight;
+  display: block;
+  text-align: $t-align;
 }
 
 @mixin text-h2(
