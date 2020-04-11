@@ -1,0 +1,42 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.btn-small {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 32px;
+  min-width: 70px;
+  padding: 0 20px;
+  border: solid 1px #ebebeb;
+  color: $color-text;
+  background-color: #fff;
+  border-radius: 3px;
+
+  & span {
+    margin: auto;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: $font-montserrat;
+  }
+
+  &.selected {
+    color: #fff;
+    background-color: $color-btn;
+    border-color: transparent;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-btn;
+    color: #fff;
+    border-color: transparent;
+  }
+
+  &:active {
+    background-color: darken($color: $color-shadow, $amount: 10%);
+  }
+}
