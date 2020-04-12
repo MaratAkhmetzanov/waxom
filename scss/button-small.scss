@@ -35,5 +35,6 @@
 
   &:active {
     background-color: darken($color: $color-shadow, $amount: 10%);
+    color: #fff;
   }
 }

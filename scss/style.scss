@@ -75,7 +75,11 @@ body {
         color: $color-text-selected;
       }
 
-      &.active {
+      &:active {
+        color: darken($color: $color-text-selected, $amount: 10%);
+      }
+
+      &.selected {
         color: $color-text-selected;
       }
 
@@ -93,6 +97,10 @@ body {
           fill: $color-text-selected;
           cursor: pointer;
         }
+
+        &:active {
+          fill: darken($color: $color-text-selected, $amount: 10%);
+        }
       }
 
       &-search {
@@ -109,6 +117,10 @@ body {
           &:hover {
             fill: $color-text-selected;
             cursor: pointer;
+          }
+
+          &:active {
+            fill: darken($color: $color-text-selected, $amount: 10%);
           }
         }
 
@@ -214,6 +226,10 @@ body {
         opacity: 0.8;
       }
 
+      &:active {
+        background-color: darken($color: $color-text-selected, $amount: 10%);
+      }
+
       &.checked {
         opacity: 1;
         border: 2px solid #d3c1ad;
@@ -235,9 +251,9 @@ body {
     width: 276px;
     text-align: center;
     margin: 0 12px;
+    cursor: pointer;
 
     &:hover {
-      cursor: pointer;
       & .services-item-title {
         color: $color-text-selected;
       }
@@ -248,6 +264,20 @@ body {
 
       &:after {
         border-color: $color-text-selected;
+      }
+    }
+
+    &:active {
+      & .services-item-title {
+        color: darken($color: $color-text-selected, $amount: 10%);
+      }
+
+      & .services-item-img {
+        fill: darken($color: $color-text-selected, $amount: 10%);
+      }
+
+      &:after {
+        border-color: darken($color: $color-text-selected, $amount: 10%);
       }
     }
 
@@ -390,6 +420,10 @@ body {
 
         &:hover {
           fill: $color-text-selected;
+        }
+
+        &:active {
+          fill: darken($color: $color-text-selected, $amount: 10%);
         }
       }
     }
@@ -637,7 +671,7 @@ body {
   }
 
   &-item {
-    margin: 0 15px 30px;
+    margin: 0 15px 40px;
     width: 370px;
     background-color: $color-bg;
     position: relative;
@@ -762,6 +796,20 @@ body {
       display: inline;
       position: relative;
 
+      &:hover {
+        color: darken($color: $color-text-selected, $amount: 10%);
+        &:after {
+          border-left-color: darken($color: $color-text-selected, $amount: 10%);
+        }
+      }
+
+      &:active {
+        color: darken($color: $color-text-selected, $amount: 20%);
+        &:after {
+          border-left-color: darken($color: $color-text-selected, $amount: 20%);
+        }
+      }
+
       &:after {
         content: "";
         display: block;
@@ -776,9 +824,26 @@ body {
     }
   }
 
-  &-btn {
-    @include button;
-    margin: 0 auto;
+  &-btns {
+    display: flex;
+    justify-content: center;
+
+    &-item {
+      background-color: transparent;
+      border: 0;
+      outline: none;
+      fill: #d1d1d1;
+      margin: 0 4px;
+      cursor: pointer;
+
+      &:hover {
+        fill: $color-text-selected;
+      }
+
+      &:active {
+        fill: darken($color: $color-text-selected, $amount: 10%);
+      }
+    }
   }
 }
 
