@@ -518,10 +518,14 @@ body {
     border: none;
     outline: none;
     fill: #fff;
+    cursor: pointer;
 
     &:hover {
-      cursor: pointer;
       fill: $color-text-selected;
+    }
+
+    &:active {
+      fill: darken($color: $color-text-selected, $amount: 10%);
     }
 
     &-icon {
