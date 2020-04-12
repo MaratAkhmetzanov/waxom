@@ -212,6 +212,7 @@ body {
       margin: 0 5px;
       cursor: pointer;
     }
+
     &-item {
       display: block;
       width: 11px;
@@ -219,7 +220,6 @@ body {
       border-radius: 50%;
       background-color: #fff;
       opacity: 0.5;
-      box-sizing: padding-box;
       margin: 0 5px;
 
       &:hover {
