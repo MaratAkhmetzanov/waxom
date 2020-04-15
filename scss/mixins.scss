@@ -43,6 +43,7 @@
   justify-content: center;
   align-items: center;
   border: none;
+  outline: none;
 
   &:hover {
     background-color: $color-shadow;
@@ -59,7 +60,7 @@
   $f-size: 16px,
   $l-height: 1.75,
   $color: $color-text,
-  $f-weight: $font-weight-main,
+  $f-weight: $font-weight-400,
   $t-align: left
 ) {
   font-size: $f-size;
@@ -74,7 +75,7 @@
 @mixin text-h2(
   $f-size: 30px,
   $align: center,
-  $f-weight: 600,
+  $f-weight: $font-weight-600,
   $color: $color-header
 ) {
   font-size: $f-size;
@@ -86,11 +87,67 @@
 @mixin text-h3(
   $f-size: 20px,
   $align: left,
-  $f-weight: 500,
+  $f-weight: $font-weight-500,
   $color: $color-text-selected
 ) {
   font-size: $f-size;
   font-weight: $f-weight;
   text-align: $align;
   color: $color;
+}
+
+@mixin text-h4(
+  $f-size: 24px,
+  $align: left,
+  $f-weight: $font-weight-600,
+  $color: #fff
+) {
+  font-size: $f-size;
+  font-weight: $f-weight;
+  text-align: $align;
+  color: $color;
+  text-transform: capitalize;
+}
+
+@mixin recent-wrp {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 24px;
+  margin-right: 30px;
+}
+
+@mixin recent-post {
+  width: 274px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #252525;
+  display: block;
+  text-decoration: none;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+
+  &:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  &-date {
+    @include text-p(
+      $f-size: 12px,
+      $l-height: 12px,
+      $color: #363636,
+      $f-weight: $font-weight-500,
+      $t-align: left
+    );
+  }
+
+  &-p {
+    @include text-p(
+      $f-size: 14px,
+      $l-height: 20px,
+      $color: $color-header,
+      $f-weight: $font-weight-500,
+      $t-align: left
+    );
+  }
 }
