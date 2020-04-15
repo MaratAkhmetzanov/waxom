@@ -2,11 +2,8 @@
 @import "mixins.scss";
 
 .btn-small {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
   align-items: center;
   height: 32px;
   min-width: 70px;
@@ -38,5 +35,6 @@
 
   &:active {
     background-color: darken($color: $color-shadow, $amount: 10%);
+    color: #fff;
   }
 }
