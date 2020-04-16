@@ -33,6 +33,17 @@
 
 @font-face {
   font-family: "Montserrat";
+  src: url("montserrat-medium.eot");
+  src: url("montserrat-medium.eot?#iefix") format("embedded-opentype"),
+    url("montserrat-medium.woff2") format("woff2"),
+    url("montserrat-medium.woff") format("woff"),
+    url("montserrat-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
   src: url("montserrat-semibold.eot");
   src: url("montserrat-semibold.eot?#iefix") format("embedded-opentype"),
     url("montserrat-semibold.woff2") format("woff2"),
